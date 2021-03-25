@@ -13,4 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="SearchTheme" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="fontFamily">@font/poppins</item>
+    </style>
 </resources>

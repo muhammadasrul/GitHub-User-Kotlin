@@ -1,233 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_700"
-    tools:context=".ui.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:backgroundTint="@color/background_700">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/black_gradient"
+                    android:elevation="1dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+                    app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
+                    app:layout_constraintStart_toStartOf="@+id/imgAvatar"
+                    app:layout_constraintTop_toTopOf="@+id/imgAvatar"
+                    tools:ignore="ContentDescription"/>
+
+                <ImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_profile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/black_gradient"
-            android:elevation="1dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
-            app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
-            app:layout_constraintStart_toStartOf="@+id/imgAvatar"
-            app:layout_constraintTop_toTopOf="@+id/imgAvatar"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/imgAvatar"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/user1" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="@color/white"
-            app:fabCustomSize="46dp"
-            app:backgroundTint="@color/background_200"
-            app:layout_constraintTop_toTopOf="@+id/imgAvatar"
-            app:layout_constraintStart_toStartOf="@+id/imgAvatar"
-            android:layout_margin="18dp"
-            tools:ignore="ContentDescription" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabShare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="18dp"
-            android:src="@drawable/ic_share"
-            app:backgroundTint="@color/background_200"
-            app:fabCustomSize="46dp"
-            app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
-            app:layout_constraintTop_toTopOf="@+id/imgAvatar"
-            app:tint="@color/white"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/mainFontColor"
-            android:textSize="24sp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:elevation="2dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvUsername"
-            app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
-            app:layout_constraintStart_toStartOf="@+id/imgAvatar"
-            tools:text="Muhammad Asrul Aji Pangestu" />
-
-        <TextView
-            android:id="@+id/tvUsername"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvName"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/accentFontColor"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:elevation="2dp"
-            android:layout_marginBottom="18dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
-            app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
-            app:layout_constraintStart_toStartOf="@+id/imgAvatar"
-            tools:text="\@asrulajipangestu" />
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="18dp"
+            android:layout_margin="12dp"
             app:cardBackgroundColor="@color/background_500"
-            app:layout_constraintTop_toBottomOf="@+id/imgAvatar">
+            app:cardCornerRadius="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="18dp">
-                <TextView
-                    android:id="@+id/tvRepository"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:maxLines="1"
-                    android:textSize="24sp"
-                    android:textColor="@color/mainFontColor"
-                    android:background="@color/background_200"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:paddingTop="18dp"
-                    android:paddingBottom="18dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="1273 repository"/>
-
-                <TextView
-                    android:id="@+id/follower"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/follower"
-                    android:fontFamily="@font/poppins"
-                    android:textColor="@color/mainFontColor"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="18dp"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    app:layout_constraintTop_toBottomOf="@+id/tvRepository"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/tvFollower"/>
+                android:padding="18dp">
 
                 <TextView
                     android:id="@+id/tvFollower"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
+                    android:textAlignment="center"
                     android:textColor="@color/secondaryFontColor"
-                    android:layout_marginTop="24dp"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    app:layout_constraintStart_toEndOf="@+id/follower"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvRepository"
-                    tools:text="1237"/>
-
-                <TextView
-                    android:id="@+id/following"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:textColor="@color/mainFontColor"
-                    android:text="@string/following"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    app:layout_constraintTop_toTopOf="@+id/tvFollowing"
-                    app:layout_constraintStart_toStartOf="@+id/follower"/>
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvFollowing"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="123" />
 
                 <TextView
                     android:id="@+id/tvFollowing"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
                     android:textColor="@color/secondaryFontColor"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvFollower"
-                    app:layout_constraintTop_toBottomOf="@id/tvFollower"
-                    tools:text="87234" />
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvRepository"
+                    app:layout_constraintStart_toEndOf="@+id/tvFollower"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="876" />
 
                 <TextView
-                    android:id="@+id/company"
+                    android:id="@+id/tvRepository"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:text="@string/company"
-                    android:textColor="@color/mainFontColor"
-                    app:layout_constraintStart_toStartOf="@+id/follower"
-                    app:layout_constraintTop_toTopOf="@+id/tvCompany" />
-
-                <TextView
-                    android:id="@+id/tvCompany"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
                     android:textColor="@color/secondaryFontColor"
+                    android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvFollower"
-                    app:layout_constraintTop_toBottomOf="@id/tvFollowing"
-                    tools:text="Google" />
+                    app:layout_constraintStart_toEndOf="@id/tvFollowing"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="987" />
 
                 <TextView
-                    android:id="@+id/location"
+                    android:id="@+id/follower"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
+                    android:text="@string/follower"
+                    android:textAlignment="center"
                     android:textColor="@color/mainFontColor"
-                    android:text="@string/location"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    app:layout_constraintTop_toTopOf="@+id/tvLocation"
-                    app:layout_constraintStart_toStartOf="@+id/follower"/>
+                    app:layout_constraintEnd_toStartOf="@id/following"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFollower" />
 
                 <TextView
+                    android:id="@+id/following"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/following"
+                    android:textAlignment="center"
+                    android:textColor="@color/mainFontColor"
+                    app:layout_constraintEnd_toStartOf="@id/repository"
+                    app:layout_constraintStart_toEndOf="@+id/follower"
+                    app:layout_constraintTop_toBottomOf="@id/tvFollowing" />
+
+                <TextView
+                    android:id="@+id/repository"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/repository"
+                    android:textAlignment="center"
+                    android:textColor="@color/mainFontColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/following"
+                    app:layout_constraintTop_toBottomOf="@id/tvRepository" />
+
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvLocation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/secondaryFontColor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvCompany"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/following"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Jakarta Indonesia" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/ic_work"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
                     android:textColor="@color/secondaryFontColor"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvFollower"
-                    app:layout_constraintTop_toBottomOf="@id/tvCompany"
-                    tools:text="indonesia" />
+                    app:layout_constraintStart_toEndOf="@+id/tvLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/following"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Jakarta Indonesia" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp"
+            app:cardBackgroundColor="@color/background_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_200"
+                    app:tabIndicatorColor="@color/secondaryFontColor"
+                    app:tabSelectedTextColor="@color/mainFontColor"
+                    app:tabTextColor="@color/secondaryFontColor"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:background="@color/background_200"
+                    android:paddingBottom="160dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GitHub</string>
+    <string name="repository">Repository</string>
+    <string name="location">Lokasi</string>
+    <string name="company">Perusahaan</string>
+    <string name="following">Mengikuti</string>
+    <string name="follower">Pengikut</string>
+    <string name="github_text">Where the world builds software</string>
+    <string name="home">Beranda</string>
+    <string name="share">Lihat halaman GitHub %s!\nhttps://github.com/%s</string>
+    <string name="no_data">Tidak ada data</string>
+    <string name="language">Bahasa</string>
+    <string name="no_location">No Location</string>
+    <string name="no_company">No Company</string>
+</resources>

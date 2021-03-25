@@ -1,4 +1,4 @@
-package com.asrul.github.ui
+package com.asrul.github.ui.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.asrul.github.R
-import com.asrul.github.data.User
+import com.asrul.github.data.network.response.UserResponse
 import com.asrul.github.databinding.ListUserBinding
 
-class UserAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(private val userList: List<UserResponse?>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -30,14 +30,13 @@ class UserAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter<U
     override fun getItemCount(): Int = userList.size
 
     inner class UserViewHolder(private val binding: ListUserBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(user: User) {
+        fun bind(user: UserResponse?) {
             with(binding) {
-                tvName.text = user.name
-                tvUsername.text = root.context.getString(R.string.username, user.username)
-                tvCompany.text = user.company
-                tvLocation.text = user.location
+                tvUsername.text = user?.login
+                tvType.text = user?.type
 
-                imgAvatar.load(user.avatar!!) {
+                imgAvatar.load(user?.avatarUrl) {
+                    placeholder(R.drawable.ic_profile)
                     transformations(CircleCropTransformation())
                 }
 
@@ -49,6 +48,6 @@ class UserAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter<U
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(user: User)
+        fun onItemClicked(user: UserResponse?)
     }
 }

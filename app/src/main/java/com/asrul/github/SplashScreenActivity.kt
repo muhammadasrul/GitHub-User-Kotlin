@@ -9,10 +9,10 @@ import android.os.Looper
 import android.view.View
 import android.view.WindowManager
 import com.asrul.github.databinding.SplashScreenBinding
-import com.asrul.github.ui.MainActivity
+import com.asrul.github.ui.main.MainActivity
 
 @Suppress("DEPRECATION")
-class SplashScreen : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
 
     companion object {
         const val DELAY = 1000L
