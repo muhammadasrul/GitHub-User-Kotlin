@@ -1,4 +1,4 @@
-package com.asrul.github
+package com.asrul.github.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent

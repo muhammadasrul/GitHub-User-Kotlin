@@ -1,5 +1,0 @@
-<resources>
-    <style name="Widget.Theme.GitHub.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/background_200</item>
-    </style>
-</resources>

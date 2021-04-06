@@ -3,7 +3,6 @@ package com.asrul.github.ui.main
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
@@ -16,6 +15,8 @@ import com.asrul.github.R
 import com.asrul.github.data.network.response.SearchItem
 import com.asrul.github.databinding.ActivityMainBinding
 import com.asrul.github.ui.detail.DetailActivity
+import com.asrul.github.ui.favorite.FavoriteActivity
+import com.asrul.github.ui.setting.SettingsActivity
 import com.asrul.github.util.setGone
 import com.asrul.github.util.setVisible
 
@@ -25,11 +26,12 @@ class MainActivity : AppCompatActivity() {
         const val QUERY = "query"
     }
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         window.apply {
@@ -115,7 +117,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.language -> startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            R.id.setting -> startActivity(Intent(this, SettingsActivity::class.java))
+            R.id.favorite -> startActivity(Intent(this, FavoriteActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }

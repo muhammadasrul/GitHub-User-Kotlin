@@ -17,14 +17,14 @@ import com.asrul.github.util.setVisible
 
 class FollowingFragment : Fragment() {
 
-    private var _binding: FragmentFollowingBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentFollowingBinding by lazy {
+        FragmentFollowingBinding.inflate(layoutInflater)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFollowingBinding.inflate(inflater, container, false)
         return binding.root
     }
 

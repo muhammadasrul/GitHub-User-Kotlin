@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Basic Settings">
+
+        <Preference
+            app:icon="@drawable/ic_language"
+            app:title="@string/language"
+            app:summary="@string/change_language">
+            <intent
+                android:action="android.settings.LOCALE_SETTINGS"/>
+        </Preference>
+
+        <SwitchPreferenceCompat
+            app:key="@string/reminder"
+            app:summaryOff="@string/daily_off"
+            app:summaryOn="@string/daily_on"
+            app:title="@string/daily_reminder" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

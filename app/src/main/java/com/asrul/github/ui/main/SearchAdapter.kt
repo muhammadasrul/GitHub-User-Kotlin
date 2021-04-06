@@ -17,7 +17,6 @@ class SearchAdapter(private val searchItem: List<SearchItem?>): RecyclerView.Ada
         this.onItemClickCallback = onItemClickCallback
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val binding = ListUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SearchViewHolder(binding)

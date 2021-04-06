@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.asrul.github">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <permission
+        android:name="com.asrul.github.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.asrul.github.READ_DATABASE"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +18,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHub">
+        <receiver android:name=".widget.GithubUserWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/github_user_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".widget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.setting.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/PreferenceTheme" />
+
+        <receiver
+            android:name=".DailyReminder"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.asrul.github"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.favorite.FavoriteActivity" />
+        <activity
+            android:name=".ui.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +61,7 @@
         <activity
             android:name=".ui.detail.DetailActivity"
             android:parentActivityName=".ui.main.MainActivity" />
-        <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.main.MainActivity" />
     </application>
 
 </manifest>

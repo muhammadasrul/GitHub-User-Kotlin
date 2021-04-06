@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="sd">8dp</dimen>
+    <dimen name="md">12dp</dimen>
+    <dimen name="ld">18dp</dimen>
+    <dimen name="xld">24dp</dimen>
+    <dimen name="xxld">32dp</dimen>
+
+    <dimen name="sf">16sp</dimen>
+    <dimen name="mf">18sp</dimen>
+    <dimen name="lf">24sp</dimen>
+
+</resources>

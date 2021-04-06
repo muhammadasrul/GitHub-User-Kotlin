@@ -8,9 +8,25 @@
     <string name="follower">Pengikut</string>
     <string name="github_text">Where the world builds software</string>
     <string name="home">Beranda</string>
-    <string name="share">Lihat halaman GitHub %s!\nhttps://github.com/%s</string>
+    <string name="share_msg">Lihat halaman GitHub %s!\nhttps://github.com/%s</string>
     <string name="no_data">Tidak ada data</string>
     <string name="language">Bahasa</string>
     <string name="no_location">No Location</string>
     <string name="no_company">No Company</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="setting">Pengaturan</string>
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="daily_on">Daily Reminder is on</string>
+    <string name="daily_off">Daily Reminder is off</string>
+    <string name="daily_message">Temukan user GitHub favorit kamu sekarang!</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="reminder">reminder</string>
+    <string name="appwidget_text">Github</string>
+    <string name="add_widget">Tambahkan widget</string>
+    <string name="data_empty">Data Empty</string>
+    <string name="delete_from_fav">%s berhasil dihapus dari favorite!</string>
+    <string name="add_to_fav">%s berhasil ditambahkan ke favorite!</string>
+    <string name="touched_widget">Touched user: %s</string>
 </resources>

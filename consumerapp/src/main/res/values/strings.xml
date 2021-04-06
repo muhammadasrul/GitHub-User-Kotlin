@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GitHub Consumer</string>
+    <string name="repository">Repository</string>
+    <string name="location">Location</string>
+    <string name="company">Company</string>
+    <string name="following">Following</string>
+    <string name="follower">Follower</string>
+    <string name="github_text">Where the world builds software</string>
+    <string name="home">Favorites User</string>
+    <string name="share_msg">Lihat halaman GitHub %s!\nhttps://github.com/%s</string>
+    <string name="no_data">No data available</string>
+    <string name="language">Language</string>
+    <string name="no_location">No Location</string>
+    <string name="no_company">No Company</string>
+    <string name="consumer_toast">Please use the main application to see details!</string>
+</resources>
