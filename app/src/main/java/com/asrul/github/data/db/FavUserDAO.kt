@@ -7,7 +7,7 @@ import androidx.room.*
 @Dao
 interface FavUserDAO {
     @Query("SELECT * FROM favorite_user")
-    fun getAllUser(): List<FavUserEntity>
+    fun getAllUser(): LiveData<List<FavUserEntity>>
 
     @Query("SELECT * FROM favorite_user WHERE username = :username")
     fun getByUsername(username: String): FavUserEntity?
@@ -21,4 +21,8 @@ interface FavUserDAO {
     //ContentProvider
     @Query("SELECT * FROM favorite_user")
     fun cursorGetAllUser(): Cursor
+
+    //Widget
+    @Query("SELECT * FROM favorite_user")
+    fun getAllWidget(): List<FavUserEntity>
 }

@@ -9,8 +9,8 @@ import com.asrul.github.R
 import com.asrul.github.data.db.FavUserEntity
 import com.asrul.github.databinding.ActivityFavoriteBinding
 import com.asrul.github.ui.detail.DetailActivity
-import com.asrul.github.util.setGone
 import com.asrul.github.util.setVisible
+import com.asrul.github.util.setGone
 
 class FavoriteActivity : AppCompatActivity() {
 

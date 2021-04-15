@@ -18,11 +18,12 @@ class SplashScreenActivity : AppCompatActivity() {
         const val DELAY = 1000L
     }
 
-    private lateinit var binding: SplashScreenBinding
+    private val binding: SplashScreenBinding by lazy {
+        SplashScreenBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         window.apply {

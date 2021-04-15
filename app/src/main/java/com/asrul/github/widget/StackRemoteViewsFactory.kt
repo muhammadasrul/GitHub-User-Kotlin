@@ -25,13 +25,13 @@ internal class StackRemoteViewsFactory(private val context: Context): RemoteView
     override fun onCreate() {
         userDAO = AppDatabase.getDatabase(context).favUserDAO()
         runBlocking(Dispatchers.IO) {
-                widgetItems = userDAO.getAllUser()
+                widgetItems = userDAO.getAllWidget()
         }
     }
 
     override fun onDataSetChanged() {
         runBlocking(Dispatchers.IO) {
-                widgetItems = userDAO.getAllUser()
+                widgetItems = userDAO.getAllWidget()
         }
     }
 
